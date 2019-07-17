@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C73B291B-4C31-4990-A2EB-FE99BF9C2F28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>VisualBasicLearning.ForLoop</StartupObject>
+    <RootNamespace>VisualBasicLearning</RootNamespace>
+    <AssemblyName>VisualBasicLearning</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>VisualBasicLearning.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>VisualBasicLearning.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaseConditon.Designer.vb">
+      <DependentUpon>CaseConditon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CaseConditon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convertor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Convertor.Designer.vb">
+      <DependentUpon>Convertor.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoWhile.Designer.vb">
+      <DependentUpon>DoWhile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DoWhile.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElseIf.Designer.vb">
+      <DependentUpon>ElseIf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElseIf.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTab.Designer.vb">
+      <DependentUpon>EmployeeTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForLoop.Designer.vb">
+      <DependentUpon>ForLoop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ForLoop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IfCondition.Designer.vb">
+      <DependentUpon>IfCondition.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IfCondition.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IfConditon2.Designer.vb">
+      <DependentUpon>IfConditon2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="IfConditon2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListBox.Designer.vb">
+      <DependentUpon>ListBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginTab.Designer.vb">
+      <DependentUpon>LoginTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PictureBox.Designer.vb">
+      <DependentUpon>PictureBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PictureBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterTab.Designer.vb">
+      <DependentUpon>RegisterTab.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterTab.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RGB.Designer.vb">
+      <DependentUpon>RGB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RGB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StringFunction.Designer.vb">
+      <DependentUpon>StringFunction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StringFunction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwitchCase.Designer.vb">
+      <DependentUpon>SwitchCase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SwitchCase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowser.Designer.vb">
+      <DependentUpon>WebBrowser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CaseConditon.resx">
+      <DependentUpon>CaseConditon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Convertor.resx">
+      <DependentUpon>Convertor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoWhile.resx">
+      <DependentUpon>DoWhile.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElseIf.resx">
+      <DependentUpon>ElseIf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTab.resx">
+      <DependentUpon>EmployeeTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForLoop.resx">
+      <DependentUpon>ForLoop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IfCondition.resx">
+      <DependentUpon>IfCondition.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IfConditon2.resx">
+      <DependentUpon>IfConditon2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListBox.resx">
+      <DependentUpon>ListBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginTab.resx">
+      <DependentUpon>LoginTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PictureBox.resx">
+      <DependentUpon>PictureBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterTab.resx">
+      <DependentUpon>RegisterTab.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RGB.resx">
+      <DependentUpon>RGB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StringFunction.resx">
+      <DependentUpon>StringFunction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowser.resx">
+      <DependentUpon>WebBrowser.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

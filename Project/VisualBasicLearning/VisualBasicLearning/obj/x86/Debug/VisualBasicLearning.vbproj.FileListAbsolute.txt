@@ -1,0 +1,35 @@
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\bin\Debug\VisualBasicLearning.exe
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\bin\Debug\VisualBasicLearning.pdb
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\bin\Debug\VisualBasicLearning.xml
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.Convertor.resources
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.Resources.resources
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.vbproj.GenerateResource.Cache
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.exe
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.xml
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.pdb
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.ListBox.resources
+C:\Users\Dee\AppData\Local\Temporary Projects\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.PictureBo.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.exe
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.xml
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.pdb
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\bin\Debug\VisualBasicLearning.exe
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\bin\Debug\VisualBasicLearning.pdb
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\bin\Debug\VisualBasicLearning.xml
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.Convertor.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.ListBox.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.Resources.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.vbproj.GenerateResource.Cache
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.IfCondition.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.RGB.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.Form1.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.PictureBo.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.IfConditon2.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.CaseConditon.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.ForLoop.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.DoWhile.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.StringFunction.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.SplashScreen.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.EmployeeTab.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.LoginTab.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.RegisterTab.resources
+E:\Vb.net\VisualBasicLearning\VisualBasicLearning\obj\x86\Debug\VisualBasicLearning.WebBrowser.resources
