@@ -17,7 +17,5 @@
 
     End Sub
 
-    Private Sub RegisterLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegisterLabel.Click
-
-    End Sub
+    
 End Class
