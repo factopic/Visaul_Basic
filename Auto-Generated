@@ -1,0 +1,65 @@
+On Particular Form
+
+    ' Auto Generated SLNO number
+
+ 
+    Sub NewRec()
+        ClearTxtControls(Me, 1)
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        Conn.Open()
+        Dim Cmd0 As New SqlCommand("select max(sl_no) from usertable", Conn)
+        Dim D1 As SqlDataReader = Cmd0.ExecuteReader()
+        If D1.HasRows Then
+            D1.Read()
+            s1Var = IIf(IsDBNull(D1(0)), 100, D1(0) + 1)
+        Else
+            TextBox1.Text = "1"
+        End If
+        TextBox1.Focus()
+    End Sub
+
+
+
+
+  
+    Private Sub RegisterTab_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        displays()
+        NewRec()
+    End Sub
+
+
+
+-----------------------------------------------------------------------
+
+In Module
+
+
+Enum CtrlType
+ TextBox = 0
+ ComboBox = 1
+
+End Enum
+
+
+    Public Sub ClearTxtControls(ByRef frm As Object, ByRef ControlType As CtrlType, Optional ByRef Tagstr As Object = Nothing)
+        Dim Contrl As Object
+        For Each Contrl In frm.Controls
+            If Not (IsNothing(Tagstr)) Then
+                If Trim(UCase(Contrl.Tag)) = Trim(UCase(Tagstr)) Then
+                    Contrl.Text = ""
+                    Exit For
+                End If
+            Else
+                Select Case ControlType
+                    Case CtrlType.ComboBox
+                        If TypeOf Contrl Is System.Windows.Forms.ComboBox Then Contrl.Text = ""
+                    Case CtrlType.TextBox
+                        If TypeOf Contrl Is System.Windows.Forms.TextBox Then Contrl.Text = ""
+                End Select
+            End If
+        Next Contrl
+        Contrl = Nothing
+    End Sub
+
+
+
