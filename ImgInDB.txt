@@ -2,7 +2,7 @@
 
 Imports System.Data.SqlClient
 Imports System.IO
-
+Imports System.Date
 
 
 Public Class ImageDB
