@@ -1,0 +1,104 @@
+'To Browse the use OpenFileDialog1 from ToolBox
+
+Imports System.Data.SqlClient
+Imports System.IO
+
+
+
+Public Class ImageDB
+
+    Dim q1Var, q2Var As String
+    Private Sub BrowseButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BrowseButton.Click
+        Try
+            With OpenFileDialog1
+                .Filter = ("Images |*.png; *.bmp; *.jpg; *.jpeg; *.gif; *.ico;")
+                .FilterIndex = 4
+            End With
+            OpenFileDialog1.FileName = ""
+            If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+                PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+
+
+
+    Private Sub ImageDB_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub SaveButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveButton.Click
+        SaveRecords()
+    End Sub
+
+
+
+
+    Sub SaveRecords()
+
+        If ProductTextBox.Text = "" Then
+            MsgBox("Please Enter The Necessary Details")
+            Exit Sub
+        End If
+
+        If conn.State = ConnectionState.Open Then conn.Close()
+        conn.Open()
+        Dim Cmd0 As New SqlCommand("select Product from ProductEntry where Product='" & UCase(ProductTextBox.Text) & "'", conn)
+        Dim D1 As SqlDataReader = Cmd0.ExecuteReader()
+        If D1.HasRows Then
+            MsgBox("This record is already present in the database")
+            If conn.State = ConnectionState.Open Then conn.Close()
+            Exit Sub
+        End If
+
+        q1Var = "insert into ProductEntry(Picture,Product, Category, Brand, Price)"
+        q2Var = "values(@Picture, @Product, @Category, @Brand, @Price)"
+
+        MsgBox(q1Var & q2Var)
+        Dim command As New SqlCommand(q1Var & q2Var, conn)
+        Dim ms As New MemoryStream
+        PictureBox1.Image.Save(ms, PictureBox1.Image.RawFormat)
+
+        command.Parameters.Add("@Picture", SqlDbType.Image).Value = ms.ToArray
+
+        command.Parameters.Add("@Product", SqlDbType.NVarChar).Value = ProductTextBox.Text
+        command.Parameters.Add("@Category", SqlDbType.NVarChar).Value = CategoryComboBox.Text
+        command.Parameters.Add("@Brand", SqlDbType.NVarChar).Value = BrandTextBox.Text
+        command.Parameters.Add("@Price", SqlDbType.Int).Value = PriceTextBox.Text
+
+
+
+        If conn.State = ConnectionState.Open Then conn.Close()
+        conn.Open()
+        If command.ExecuteNonQuery() = 1 Then
+            MsgBox("Added Successfully!!!")
+        Else
+            MsgBox("Error!!!")
+        End If
+        DispRecord()
+    End Sub
+
+    Sub DispRecord()
+
+        If conn.State = ConnectionState.Open Then conn.Close()
+        conn.Open()
+
+        Dim DS1 As New DataSet
+        Dim adp As New SqlDataAdapter("select * From ProductEntry order by Product", conn)
+        adp.Fill(DS1)
+        DataGridView1.RowTemplate.Height = 80
+
+        Dim imgc As New DataGridViewImageColumn
+        DataGridView1.DataSource = DS1.Tables(0)
+        imgc = DataGridView1.Columns(0)
+        imgc.ImageLayout = DataGridViewImageCellLayout.Stretch
+        If conn.State = ConnectionState.Open Then conn.Close()
+    End Sub
+
+    Private Sub DisplayButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DisplayButton.Click
+        DispRecord()
+    End Sub
+End Class
