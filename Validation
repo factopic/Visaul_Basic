@@ -42,3 +42,19 @@ Phone Number:
         End If
 
     End Sub
+
+
+
+
+Alphabet Validation: 
+
+Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.LostFocus
+        If Not Regex.Match(TextBox2.Text, "^[a-z. ]*$", RegexOptions.IgnoreCase).Success Then
+            MsgBox("please enter alpha text only!")
+            TextBox2.Focus()
+            TextBox2.Clear()
+
+        End If
+    End Sub
+
+
