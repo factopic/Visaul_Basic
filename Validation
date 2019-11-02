@@ -1,5 +1,12 @@
 Validation
 
+Private Sub ClearButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ClearButton.Click
+        PictureBox1.Image = Nothing
+        BrandTextBox.Clear()
+        CategoryComboBox.SelectedIndex = -1
+    End Sub
+
+
 Email 
 
   Private Sub EmailTextBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles EmailTextBox.LostFocus
