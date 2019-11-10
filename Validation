@@ -23,16 +23,16 @@ Pincode
         
         'Dim phoneNumber As New Regex("\d{3}\d{3}\d{4}")
         Dim phoneNumber As New Regex("^([1-8]{1})([0-9]{6})")
-        TextBox8.MaxLength = 10
+        TextBox6.MaxLength = 10
 
-        If phoneNumber.IsMatch(TextBox8.Text) Then
+        If phoneNumber.IsMatch(TextBox6.Text) Then
 
-            TextBox9.Focus()
+            TextBox7.Focus()
         Else
 
             MsgBox("Not Valid Phone Number")
-            TextBox8.Text = ""
-            TextBox8.Focus()
+            TextBox6.Text = ""
+            TextBox6.Focus()
 
         End If
     End Sub
