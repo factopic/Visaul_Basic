@@ -11,7 +11,7 @@ Private Sub DG1_CellMouseClick(ByVal sender As Object, ByVal e As System.Windows
 
 
 
-------------------------------------------------------------
+------------------------------------------------------------ Mail
         Dim Mail As New MailMessage
         Mail.Subject = "Your Account Has Been Approved!!!"
         If TextBox6.Text = "" Then
