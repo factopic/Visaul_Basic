@@ -8,3 +8,23 @@ Private Sub DG1_CellMouseClick(ByVal sender As Object, ByVal e As System.Windows
         TextBox5.Text = DG1.Rows(e.RowIndex).Cells(4).Value
 
     End Sub
+
+
+
+------------------------------------------------------------
+        Dim Mail As New MailMessage
+        Mail.Subject = "Your Account Has Been Approved!!!"
+        If TextBox6.Text = "" Then
+            MsgBox("Please Enter The E-Mail Address", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Error!")
+        End If
+        Mail.To.Add(TextBox6.Text)
+        Mail.From = New MailAddress("bosscsk56@gmail.com")
+        Mail.Body = ("Your account id=" & TextBox1.Text & " and name=" & TextBox2.Text & " ")
+
+
+        Dim SMTP As New SmtpClient("smtp.gmail.com")
+        SMTP.EnableSsl = True
+        SMTP.Credentials = New System.Net.NetworkCredential("bosscsk56@gmail.com", "themonk1919")
+        SMTP.Port = "587"
+        SMTP.Send(Mail)
+        MsgBox("Approved Successfully")
