@@ -9,7 +9,7 @@ Private Sub ClearButton_Click(ByVal sender As System.Object, ByVal e As System.E
 
 Email 
 
-  Private Sub EmailTextBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles EmailTextBox.LostFocus
+  Private Sub EmailTextBox_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles EmailTextBox.Leave
         Dim regex As Regex = New Regex("^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")
         Dim isValid As Boolean = regex.IsMatch(EmailTextBox.Text.Trim)
         If Not isValid Then
@@ -64,12 +64,13 @@ Phone Number:
 
 Alphabet Validation: 
 
-Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.LostFocus
+Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.Leave
         If Not Regex.Match(TextBox2.Text, "^[a-z. ]*$", RegexOptions.IgnoreCase).Success Then
             MsgBox("please enter alpha text only!")
             TextBox2.Focus()
             TextBox2.Clear()
-
+        Else
+                TextBox3.Focus()
         End If
     End Sub
 
