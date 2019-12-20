@@ -22,7 +22,7 @@ Pincode
     Private Sub TextBox6_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox6.Leave
         
         'Dim phoneNumber As New Regex("\d{3}\d{3}\d{4}")
-        Dim phoneNumber As New Regex("^([1-8]{1})([0-9]{6})")
+        Dim phoneNumber As New Regex("^([1-9]{1})([0-9]{6})")
         TextBox6.MaxLength = 10
 
         If phoneNumber.IsMatch(TextBox6.Text) Then
@@ -87,3 +87,31 @@ Private Sub PriceTextBox_TextChanged(ByVal sender As System.Object, ByVal e As S
         End If
     End Sub
 
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+ Public Sub ClearTxtControls(ByRef frm As Object, ByRef ControlType As CtrlType, Optional ByRef Tagstr As Object = Nothing)
+        Dim Contrl As Object
+        For Each Contrl In frm.Controls
+            If Not (IsNothing(Tagstr)) Then
+                If Trim(UCase(Contrl.Tag)) = Trim(UCase(Tagstr)) Then
+                    Contrl.Text = ""
+                    Exit For
+                End If
+            Else
+                Select Case ControlType
+                    Case CtrlType.ComboBox
+                        If TypeOf Contrl Is System.Windows.Forms.ComboBox Then Contrl.Text = ""
+                    Case CtrlType.TextBox
+                        If TypeOf Contrl Is System.Windows.Forms.TextBox Then Contrl.Text = ""
+                End Select
+            End If
+        Next Contrl
+        Contrl = Nothing
+    End Sub
+    
+    
+    
+     ClearTxtControls(Me, 1)
