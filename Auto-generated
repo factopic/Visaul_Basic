@@ -95,3 +95,26 @@ In Module
 
     End Sub
 
+=====================================================================================================================
+
+
+
+-------------------------------------------------Modify
+
+    Private Sub Modify_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Modify.Click
+        If vbNo = MsgBox("Are you sure you want to Modify this record", MsgBoxStyle.YesNo, "Modify") Then
+            Exit Sub
+        End If
+
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        Conn.Open()
+
+        Dim cmd1 As New SqlCommand("update emp set dept='" & DeptTextBox.Text & "' where empid='" & pkVar & "'", Conn)
+        cmd1.ExecuteNonQuery()
+
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        DispRecord()    ' Display the Records after Modify Operation
+
+
+    End Sub
+
