@@ -57,3 +57,41 @@ In Module
 
 
 
+===============================================================================
+
+
+
+--------------------------------------------Save Operation
+
+  Sub SaveRecord()
+        'Refresh DB
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        Conn.Open()
+
+        'Check weather data is already present in DB
+        Dim cmd0 As New SqlCommand("Select * from emp where empid = '" & EmpIDTextBox.Text & "'", Conn)
+        Dim D1 As SqlDataReader = cmd0.ExecuteReader()
+
+        If D1.HasRows Then
+            MsgBox("EmpId is already present")
+            If Conn.State = ConnectionState.Open Then Conn.Close()
+            Exit Sub
+        End If
+
+        'Refresh DB
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        Conn.Open()
+
+        'Insert Data in DB if not Present
+        q1Var = " insert into emp(empid, name, dept)"
+        q2Var = "values('" & EmpIDTextBox.Text & "','" & NameTextBox.Text & "','" & DeptTextBox.Text & "')"
+
+        Dim cmd1 As New SqlCommand(q1Var & q2Var, Conn)
+        cmd1.ExecuteNonQuery()
+
+
+        If Conn.State = ConnectionState.Open Then Conn.Close()
+        'DispRecord()
+
+    End Sub
+
