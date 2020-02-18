@@ -55,7 +55,7 @@ Public Class ImageDB
         End If
 
         q1Var = "insert into ProductEntry(Picture,Product, Category, Brand, Price)"
-        q2Var = "values(@Picture, @Product, @Category, @Brand, @Price)"
+        q2Var = "values(@Picture, @Product, @Category, @Brand, @Price, @img)"
 
         MsgBox(q1Var & q2Var)
         Dim command As New SqlCommand(q1Var & q2Var, conn)
