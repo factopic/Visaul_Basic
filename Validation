@@ -83,7 +83,7 @@ Private Sub PriceTextBox_TextChanged(ByVal sender As System.Object, ByVal e As S
         If Double.TryParse(PriceTextBox.Text, result) Then
             NextTextBox.Focus()
         Else
-            MsgBox("not ")
+            MsgBox("Enter Numbers Only")
         End If
     End Sub
 
@@ -97,7 +97,7 @@ Private Sub PriceTextBox_TextChanged(ByVal sender As System.Object, ByVal e As S
         For Each Contrl In frm.Controls
             If Not (IsNothing(Tagstr)) Then
                 If Trim(UCase(Contrl.Tag)) = Trim(UCase(Tagstr)) Then
-                    Contrl.Text = ""
+                    Contrl.Text = ""mi
                     Exit For
                 End If
             Else
@@ -114,4 +114,4 @@ Private Sub PriceTextBox_TextChanged(ByVal sender As System.Object, ByVal e As S
     
     
     
-     ClearTxtControls(Me, 1)
+     ClearTxtControls(Me, 1)     ' Method Calling
