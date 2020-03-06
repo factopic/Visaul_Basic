@@ -60,7 +60,24 @@ In Module
 
 
 
+Watt definition
 
+Watt is the unit of power (symbol: W).
+
+The watt unit is named after James Watt, the inventor of the steam engine.
+
+One watt is defined as the energy consumption rate of one joule per second.
+
+1W = 1J / 1s
+
+One watt is also defined as the current flow of one ampere with voltage of one volt.
+
+1W = 1V × 1A
+Watt to mW, kW, MW, GW, dBm, dBW conversion calculator
+
+Convert watt to milliwatt, kilowatt, megawatt, gigawatt, dBm, dBW.
+
+Enter the power in one of the text boxes and press the Convert button:
 
 
 
