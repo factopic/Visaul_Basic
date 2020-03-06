@@ -56,3 +56,55 @@ In Module
     End Sub
 
 
+
+
+
+
+
+
+
+
+
+What is kilowatt (kW)?
+
+Kilowatt (symbol: kW) is a unit of electric power.
+
+    Kilowatt definition
+    Kilowatt examples
+    kW to mW, W, MW, GW conversion calculator
+
+Kilowatt definition
+
+One kilowatt (kW) is equal to 1000 watts (W):
+
+1kW = 1000W
+
+One kilowatt is defined as energy consumption of 1000 joules for 1 second:
+
+1kW = 1000J / 1s
+
+One kilowatt is equal to 1000000 milliwatts:
+
+1kW = 1000000mW
+Kilowatt examples
+Example #1
+
+What is the power consumption in kW when energy of 30000 joules was released during 10 seconds?
+
+Solution:
+
+P(kW) = 30000J / 10s / 1000 = 3kW
+Example #2
+
+What is the power consumption when consuming 6kWh for 3 hours?
+
+Solution:
+
+P(kW) = 6kWh / 3h = 2kW
+
+ 
+kW to mW, W, MW, GW, dBm, dBW conversion calculator
+
+Convert kilowatt to milliwatt, watt, megawatt, gigawatt, dBm, dBW.
+
+Enter the power in one of t
