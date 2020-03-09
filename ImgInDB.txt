@@ -1,4 +1,4 @@
-'To Browse the use OpenFileDialog1 from ToolBox
+'To Browse the imageuse OpenFileDialog1 from ToolBox
 
 Imports System.Data.SqlClient
 Imports System.IO
