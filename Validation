@@ -62,7 +62,7 @@ Phone Number:
 
 
 
-Alphabet Validation: 
+'Alphabet Validation: 
 
 Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TextBox2.Leave
         If Not Regex.Match(TextBox2.Text, "^[a-z. ]*$", RegexOptions.IgnoreCase).Success Then
@@ -75,7 +75,7 @@ Private Sub TextBox2_LostFocus(ByVal sender As Object, ByVal e As System.EventAr
     End Sub
 
 
-Price Validation(Decimal)
+'Price Validation(Decimal) 
 
 
 Private Sub PriceTextBox_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PriceTextBox.Leave
