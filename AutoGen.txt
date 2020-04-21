@@ -125,3 +125,18 @@ kW to mW, W, MW, GW, dBm, dBW conversion calculator
 Convert kilowatt to milliwatt, watt, megawatt, gigawatt, dBm, dBW.
 
 Enter the power in one of t
+
+
+
+
+
+
+Example #1
+
+What is the power consumption in kW when energy of 30000 joules was released during 10 seconds?
+
+Solution:
+
+P(kW) = 30000J / 10s / 1000 = 3kW
+
+
