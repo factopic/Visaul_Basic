@@ -9,4 +9,5 @@
         PictureBox1.Image = Nothing
         BrandTextBox.Clear()
         CategoryComboBox.SelectedIndex = -1
+        ComboBox1.SelectedIndex = -1
     End Sub
