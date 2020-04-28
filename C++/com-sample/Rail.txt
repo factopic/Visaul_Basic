@@ -1,0 +1,37 @@
+class Railway
+{
+	 public:
+		  char key[5],name[30],price[5],availseats[10],train[12],src[16],dest[16];
+		  void initial();
+		  void read();
+		  void store(int);
+		  int remove(int,char *);
+		  int hash(char *);
+		  void displayall();
+		  void retrieve(int addr,char k[]);
+ };
+void Railway::initial()
+{
+	int i,j;
+	file.open(fn,ios::in);
+	if(!file)
+	{
+		file.open(fn,ios::out);
+		if(!file)
+		{
+			cout<<"Unable to open the file";
+			getch();
+			exit(1);
+		}
+		for(i=0;i<max;i++)
+		{
+			file.seekp(i*recsize*5+i*2,ios::beg);
+			for(j=0;j<(recsize)*5;j++)
+				file<<"#";
+			file<<endl;
+		}
+		cout<<"Empty file created"<<endl;
+	}
+	file.close();
+	return;
+ }
