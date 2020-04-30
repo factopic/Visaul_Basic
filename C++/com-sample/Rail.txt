@@ -35,3 +35,37 @@ void Railway::initial()
 	file.close();
 	return;
  }
+ 
+ 
+ 
+ 
+ 
+void Railway::read()
+{
+	cout<<"Enter the record key:";	gets(key);
+	cout<<"Enter the name:";        gets(name);
+	cout<<"Enter the price:";      	gets(price);
+	cout<<"Enter the availseats:";  gets(availseats);
+	cout<<"Enter the train name:";  gets(train);
+	cout<<"Enter the source:";      gets(src);
+	cout<<"Enter the destination:"; gets(dest);
+	strcpy(buffer,key);             strcat(buffer,"|");
+	strcat(buffer,name);            strcat(buffer,"|");
+	strcat(buffer,price);           strcat(buffer,"|");
+	strcat(buffer,availseats);      strcat(buffer,"|");
+	strcat(buffer,train);           strcat(buffer,"|");
+	strcat(buffer,src);             strcat(buffer,"|");
+	strcat(buffer,dest);            strcat(buffer,"|");
+	
+	return;
+ }
+int Railway::hash(char* key)
+{
+	int i=0,sum=0;
+	while(key[i]!='\0')
+	{
+		sum=sum+(key[i]-48);
+		i++;
+	}
+	return sum % max;
+}
