@@ -69,3 +69,66 @@ int Railway::hash(char* key)
 	}
 	return sum % max;
 }
+
+
+
+
+
+
+void Railway::store(int addr)
+{
+	char dummy[10];
+	int flag=0,i,j;
+	file.open(fn,ios::in|ios::out);
+	file.seekp(addr*recsize*5+addr*2);
+	file.getline(dummy,5,'\n');
+	if(strcmp(dummy,"####")==0)
+	{
+		 file.seekp(addr*recsize*5+i*2);
+		 file<<buffer;
+		 flag=1;
+	}
+	else
+	{
+		for(i=0;i<5;i++)
+		{
+			file.seekg(addr*recsize*5+i*recsize+addr*2);
+			file.getline(dummy,5,'\n');
+			//cout<<"dummy "<<dummy<<addr*recsize*5+i*recsize+addr*2<<"\t";
+			if(strcmp(dummy,"####")==0)
+			{
+				cout<<"\n Collision has occured\n";
+				cout<<"Home address is "<<addr*recsize*5+addr*2<<" Actual address is "<<addr*recsize*5+i*recsize+i*2<<"\n";
+				file.seekp(addr*recsize*5+i*recsize+2*addr);
+				file<<buffer;
+				flag=1;
+				//cout<<"break now\n";
+				return;
+			}
+		}
+		for(i=addr+1;i!=addr;i++)
+		{
+			if(i%max==0)
+				i=0;
+			for(j=0;j<5;j++)
+			{
+				file.seekg(i*recsize*5+j*recsize+2*i);
+				file.getline(dummy,5,'\n');
+				if(strcmp(dummy,"####")==0)
+				{
+					cout<<"\n Collision has occured\n";
+					cout<<"Home address is "<<addr*recsize*5+i*2<<" Actual address is "<<i*recsize*5+j*recsize+i*2<<"\n";
+					file.seekp(i*recsize*5+j*recsize+2*i);
+					file<<buffer;
+					flag=1;
+					return;
+					// cout<<"Break now\n";
+				}
+			}
+		}
+	}
+	if(i==addr && (!flag))
+		cout<<"Hash file is full,record cannot be inserted\n";
+	file.close();
+	return;
+}
