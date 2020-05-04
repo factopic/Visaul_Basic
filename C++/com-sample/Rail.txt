@@ -309,3 +309,78 @@ void Railway::displayall(){
 
 
 
+void main()
+{
+	int ch,addr;
+	char skey[5];
+	Railway r;
+	clrscr();
+	r.initial();
+
+
+	for(;;)
+	{       textcolor(LIGHTRED);
+		cprintf("1 for read  2 for retrieve  3 to Delete  4 to Modify  5 Dispay all  6 Exit");
+		cin>>ch;
+		int found;
+		switch(ch)
+		{
+			case 1: textcolor(LIGHTRED);
+				cprintf("********Enter Railway details********");
+				cout<<endl;
+				r.read();
+				addr=r.hash(r.key);
+            cout<< addr;
+				r.store(addr);
+				cprintf("*************************************");
+				cout<<endl;
+				break;
+			case 2: textcolor(LIGHTRED);
+				cprintf("Enter key value:");
+				cin>>skey;
+				addr=r.hash(skey);
+				r.retrieve(addr,skey);
+				break;
+			case 3: textcolor(LIGHTRED);
+				cprintf("Enter key value:");
+				cin>>skey;
+				addr=r.hash(skey);
+				found=r.remove(addr,skey);
+				if(found==0)
+					cout<<"\nRecord does not exist in hash file\n";
+				else
+					cout<<"Record Deleted sucessfulley"<<endl;
+				break;
+			case 4: textcolor(LIGHTRED);
+				cprintf("Enter key value:");
+				cin>>skey;
+				addr=r.hash(skey);
+				found=r.remove(addr,skey);
+				file.close();
+				cout<<found<<endl<<endl;
+				if(found==0)
+					cout<<endl<<"\nRecord does not exist in hash file"<<endl;
+				else
+				{
+					cout<<"Enter modified Railway details:"<<endl;
+					r.read();
+					addr=r.hash(r.key);
+					r.store(addr);
+					cout<<"Record updated sucessfulley"<<endl;
+				}
+				break;
+			case 5: textcolor(LIGHTRED);
+				cprintf("********The Railway is********");
+				cout<<endl;
+				r.displayall();
+				cprintf("******************************");
+				cout<<endl;
+				break;
+			default: cout<<"Press any key to exit:";
+					getch();
+					exit(0);
+		}
+		file.close();
+	}
+}
+
