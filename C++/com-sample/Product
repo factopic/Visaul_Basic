@@ -1,0 +1,34 @@
+
+
+#include<fstream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<iomanip.h>
+#include<stdlib.h>
+#include<string.h>
+#define recsize 40
+#define max 10
+fstream file;
+char buffer[80];
+
+
+#define fn "VShop.txt"
+
+
+
+
+
+class Shopping
+{
+	 public:
+		  char key[5],category[30],prodName[15],brand[10],price[12],tax[16],weight[16];
+		  void initial();
+		  void read();
+		  void store(int);
+		  int remove(int,char *);
+		  int hash(char *);
+		  void displayall();
+		  void retrieve(int addr,char k[]);
+ };
+
+
