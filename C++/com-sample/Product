@@ -32,3 +32,31 @@ class Shopping
  };
 
 
+
+
+void Shopping::initial()
+{
+	int i,j;
+	file.open(fn,ios::in);
+	if(!file)
+	{
+		file.open(fn,ios::out);
+		if(!file)
+		{
+			cout<<"Unable to open the file";
+			getch();
+			exit(1);
+		}
+		for(i=0;i<max;i++)
+		{
+			file.seekp(i*recsize*5+i*2,ios::beg);
+			for(j=0;j<(recsize)*5;j++)
+				file<<"#";
+			file<<endl;
+		}
+		cout<<"Empty file created"<<endl;
+	}
+	file.close();
+	return;
+ }
+
