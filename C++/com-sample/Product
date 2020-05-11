@@ -303,3 +303,37 @@ int Railway::remove(int addr,char k[])
 }
 
 
+
+
+
+
+
+
+
+void Railway::displayall(){
+	file.open(fn,ios::in);
+	char dummy[10];
+	cout<<setiosflags(ios::left);
+	cout<<setw(5)<<"KEY"<<setw(30)<<"NAME"<<setw(10)<<"Price"<<setw(15)<<"availseats"<<setw(10)<<"train"<<setw(10)<<"src"<<setw(10)<<"dest"<<endl;
+	for(int i=0;i<max;i++){
+		for(int j=0;j<5;j++){
+			file.seekg(i*recsize*5+j*recsize+i*2);
+
+			file.getline(dummy,5,'\n');
+        // cout<<dummy;
+			if(strcmp(dummy,"####")!=0){
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(key,5,'|');
+				file.getline(name,30,'|');
+				file.getline(price,10,'|');
+				file.getline(availseats,16,'|');
+				file.getline(train,10,'|');
+				file.getline(src,16,'|');
+				file.getline(dest,17,'|');
+				cout<<setiosflags(ios::left);
+				cout<<setw(5)<<key<<setw(30)<<name<<setw(10)<<price<<setw(15)<<availseats<<setw(10)<<train<<setw(10)<<src<<setw(10)<<dest<<endl;
+			}
+		}
+ }
+}
+
