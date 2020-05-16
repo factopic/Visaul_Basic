@@ -1,4 +1,25 @@
-#include std
+#include<fstream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<iomanip.h>
+#include<stdlib.h>
+#include<string.h>
+#define recsize1 50
+#define max 10
+#define fn1 "Employee.txt"
+fstream file;
+char buffer[80];
 
-public Employee
-  
+
+class Employee
+{
+	 public:
+		  char key[5],name[30],salary[8],add[17],dob[20],phone[16];
+		  void initialEmp();
+		  void readEmp();
+		  void storeEmp(int);
+		  int removeEmp(int,char *);
+		  int hashEmp(char *);
+		  void displayallEmp();
+		  void retrieveEmp(int addr,char k[]);
+ };
