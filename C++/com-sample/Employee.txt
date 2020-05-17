@@ -84,3 +84,62 @@ int Employee::hashEmp(char* key)
 	return sum % max;
 }
 
+
+
+void Employee::storeEmp(int addr)
+{
+   char dummy[10];
+	int flag=0,i,j;
+	file.open(fn1,ios::in|ios::out);
+	file.seekp(addr*recsize1*5+addr*2);
+	file.getline(dummy,5,'\n');
+	if(strcmp(dummy,"####")==0)
+	{
+		 file.seekp(addr*recsize1*5+i*2);
+		 file<<buffer;
+		 flag=1;
+	}
+	else
+	{
+		for(i=0;i<5;i++)
+		{
+			file.seekg(addr*recsize1*5+i*recsize1+addr*2);
+			file.getline(dummy,5,'\n');
+			//cout<<"dummy "<<dummy<<addr*recsize1*5+i*recsize1+addr*2<<"\t";
+			if(strcmp(dummy,"####")==0)
+			{
+				cout<<"\n Collision has occured\n";
+				cout<<"Home address is "<<addr*recsize1*5+addr*2<<" Actual address is "<<addr*recsize1*5+i*recsize1+i*2<<"\n";
+				file.seekp(addr*recsize1*5+i*recsize1+2*addr);
+				file<<buffer;
+				flag=1;
+				//cout<<"break now\n";
+				return;
+			}
+		}
+		for(i=addr+1;i!=addr;i++)
+		{
+			if(i%max==0)
+				i=0;
+			for(j=0;j<5;j++)
+			{
+				file.seekg(i*recsize1*5+j*recsize1+2*i);
+				file.getline(dummy,5,'\n');
+				if(strcmp(dummy,"####")==0)
+				{
+					cout<<"\n Collision has occured\n";
+					cout<<"Home address is "<<addr*recsize1*5+i*2<<" Actual address is "<<i*recsize1*5+j*recsize1+i*2<<"\n";
+					file.seekp(i*recsize1*5+j*recsize1+2*i);
+					file<<buffer;
+					flag=1;
+					return;
+					// cout<<"Break now\n";
+				}
+			}
+		}
+	}
+	if(i==addr && (!flag))
+		cout<<"Hash file is full,record cannot be inserted\n";
+	file.close();
+	return;
+}
