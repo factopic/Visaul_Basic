@@ -53,3 +53,34 @@ class Employee
 	file.close();
 	return;
  }
+
+
+
+void Employee::readEmp()
+{
+	cout<<"Enter the record key:";	gets(key);
+	cout<<"Enter the name:";        gets(name);
+	cout<<"Enter the salary:";      gets(salary);
+	cout<<"Enter the add:";  		gets(add);
+	cout<<"Enter the dob:";  		gets(phone);
+	cout<<"Enter the phone:";       gets(dob);
+
+	strcpy(buffer,key);             strcat(buffer,"|");
+	strcat(buffer,name);            strcat(buffer,"|");
+	strcat(buffer,salary);          strcat(buffer,"|");
+	strcat(buffer,add);      		strcat(buffer,"|");
+	strcat(buffer,phone);           strcat(buffer,"|");
+	strcat(buffer,dob);             strcat(buffer,"|");
+	return;
+ }
+int Employee::hashEmp(char* key)
+{
+	int i=0,sum=0;
+	while(key[i]!='\0')
+	{
+		sum=sum+(key[i]-48);
+		i++;
+	}
+	return sum % max;
+}
+
