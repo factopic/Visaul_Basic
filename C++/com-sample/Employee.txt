@@ -216,3 +216,70 @@ void Employee::retrieveEmp(int addr,char k[])
 
 
 
+int Employee::removeEmp(int addr,char k[])
+{
+	int found=0,i;
+	char dummy[10];
+	i=addr;
+	file.open(fn1,ios::in|ios::out);
+	do
+	{
+		file.seekg(i*recsize1*5+i*2);
+		file.getline(dummy,5,'\n');
+		//cout<<dummy<<endl;
+		if(strcmp(dummy,"####")==0)
+			break;
+		file.seekg(i*recsize1*5+i*2);
+		file.getline(key,5,'|');
+		//cout<<key<<"   "<<k<<endl;
+		if(strcmp(key,k)==0)
+		{
+			found=1;
+			cout<<"Record found"<<endl;
+			file.getline(name,30,'|');
+			file.getline(salary,10,'|');
+			file.getline(add,16,'|');
+			file.getline(dob,16,'|');
+			file.getline(phone,17,'|');
+			cout<<setiosflags(ios::left);
+			cout<<"Key="<<key<<"\n"<<"Name="<<name<<"\n"<<"salary="<<salary<<"\n"<<"add="<<add<<"\n"<<"dob="<<dob<<"\n"<<"phone="<<phone<<"\n"<<endl;
+			file.seekp(i*recsize1*5+i*2);
+			for(int i=0;i<recsize1;i++)
+				file.put('#');
+			return(found);
+		}
+		else
+		{
+			for(int j=0;j<5;j++){
+				file.seekg(i*recsize1*5+j*recsize1+i*2);
+				file.getline(dummy,5,'\n');
+				if(strcmp(dummy,"####")==0)
+					return(found);
+				file.seekg(i*recsize1*5+j*recsize1+i*2);
+				file.getline(key,5,'|');
+				if(strcmp(key,k)==0)
+				{
+			found=1;
+			cout<<"Record found"<<endl;
+			file.getline(name,30,'|');
+			file.getline(salary,10,'|');
+			file.getline(add,16,'|');
+			file.getline(dob,16,'|');
+			file.getline(phone,17,'|');
+			cout<<setiosflags(ios::left);
+			cout<<"Key="<<key<<"\n"<<"Name="<<name<<"\n"<<"salary="<<salary<<"\n"<<"add="<<add<<"\n"<<"dob="<<dob<<"\n"<<"phone="<<phone<<"\n"<<endl;
+					file.seekp(i*recsize1*5+j*recsize1+i*2);
+					for(int i=0;i<recsize1;i++)
+						file.put('#');
+					return(found);
+				}
+			}
+			i++;
+			if(i%max==0)
+				i=0;
+		}
+	} while(i!=addr);
+	return(found);
+}
+
+
