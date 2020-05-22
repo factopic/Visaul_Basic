@@ -283,3 +283,34 @@ int Employee::removeEmp(int addr,char k[])
 }
 
 
+
+
+void Employee::displayallEmp(){
+	file.open(fn1,ios::in);
+	char dummy[10];
+	cout<<setiosflags(ios::left);
+	cout<<setw(5)<<"KEY"<<setw(30)<<"NAME"<<setw(10)<<"salary"<<setw(20)<<"add"<<setw(15)<<"dob"<<setw(15)<<"phone"<<endl;
+	for(int i=0;i<max;i++){
+		for(int j=0;j<5;j++){
+			file.seekg(i*recsize1*5+j*recsize1+i*2);
+
+			file.getline(dummy,5,'\n');
+        // cout<<dummy;
+			if(strcmp(dummy,"####")!=0){
+				file.seekg(i*recsize1*5+j*recsize1+i*2);
+				file.getline(key,5,'|');
+				file.getline(name,30,'|');
+				file.getline(salary,10,'|');
+				file.getline(add,20,'|');
+				file.getline(dob,20,'|');
+				file.getline(phone,17,'|');
+				cout<<setiosflags(ios::left);
+				cout<<setw(5)<<key<<setw(30)<<name<<setw(10)<<salary<<setw(20)<<add<<setw(15)<<dob<<setw(15)<<phone<<endl;
+			}
+		}
+ }
+}
+
+
+
+
