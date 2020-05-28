@@ -1,0 +1,15 @@
+include<fstream.h>
+#include<conio.h>
+#include<stdio.h>
+#include<iomanip.h>
+#include<stdlib.h>
+#include<string.h>
+#define recsize1 50
+#define recsize 40
+#define max 10
+
+#define fn1 "EmployeeDetails.txt"
+#define fn "ProductDetails.txt"
+fstream file;
+char buffer[80];
+
