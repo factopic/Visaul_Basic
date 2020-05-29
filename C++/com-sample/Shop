@@ -13,3 +13,17 @@ include<fstream.h>
 fstream file;
 char buffer[80];
 
+
+
+class Shopping
+{
+	 public:
+		  char key[5],category[30],prodName[15],brand[10],price[12],tax[16],weight[16];
+		  void initial();
+		  void read();
+		  void store(int);
+		  int remove(int,char *);
+		  int hash(char *);
+		  void displayall();
+		  void retrieve(int addr,char k[]);
+ };
