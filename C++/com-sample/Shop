@@ -27,3 +27,17 @@ class Shopping
 		  void displayall();
 		  void retrieve(int addr,char k[]);
  };
+
+
+
+int Shopping::hash(char* key)
+{
+	int i=0,sum=0;
+	while(key[i]!='\0')
+	{
+		sum=sum+(key[i]-48);
+		i++;
+	}
+	return sum % max;
+}
+
