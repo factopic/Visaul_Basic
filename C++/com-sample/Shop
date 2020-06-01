@@ -103,3 +103,77 @@ void Shopping::store(int addr)
 	file.close();
 	return;
 }
+
+
+
+
+
+
+
+void Shopping::retrieve(int addr,char k[])
+{
+	int found=0,i;
+	char dummy[10];
+	i=addr;
+	file.open(fn,ios::in|ios::out|ios::binary);
+	do
+	{
+		file.seekg(i*recsize*5+i*2);
+		file.getline(dummy,5,'\n');
+		if(strcmp(dummy,"    ")==0)
+			break;
+		file.seekg(i*recsize*5+i*2);
+		file.getline(key,5,'|');
+	   //	cout<<key<<endl;
+		if(strcmp(key,k)==0)
+		{
+			found=1;
+			cout<<"Record found"<<endl;
+			file.getline(category,30,'|');
+			file.getline(prodName,15,'|');
+			file.getline(brand,10,'|');
+			file.getline(price,12,'|');
+			file.getline(tax,16,'|');
+         file.getline(weight,16,'|');
+			cout<<setiosflags(ios::left);
+//			cout<<"Key="<<key<<"\n"<<"Category="<<category<<"\n"<<"Product Name="<<prodName<<"\n"<<"Brand="<<brand<<"\n"<<"price="<<price<<"\n"<<"tax="<<tax"\n"<<"WEIGHT="<<weight<<endl;
+         cout<<"Key="<<key<<"\n"<<"Category="<<category<<"\n"<<"Product Name="<<prodName<<"\n"<<"Brand="<<brand<<"\n"<<"price="<<price<<"\n"<<"tax="<<tax<<"\n"<<"WEIGHT="<<weight<<endl;
+			return;
+		}
+		else
+		{
+			for(int j=0;j<5;j++){
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(dummy,5,'\n');
+				//cout<<dummy<<" dummy "<<(i*recsize*5+j*recsize+i*2)<<"\t";
+				if(strcmp(dummy,"    ")==0)
+					break;
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(key,5,'|');
+
+			  //	cout<<key<<endl;
+				if(strcmp(key,k)==0)
+				{
+					found=1;
+			cout<<"Record found"<<endl;
+			file.getline(category,30,'|');
+			file.getline(prodName,5,'|');
+			file.getline(brand,16,'|');
+			file.getline(price,10,'|');
+			file.getline(tax,16,'|');
+         file.getline(weight,17,'|');
+			cout<<setiosflags(ios::left);
+			       cout<<"Key="<<key<<"\n"<<"Category="<<category<<"\n"<<"Product Name="<<prodName<<"\n"<<"Brand="<<brand<<"\n"<<"price="<<price<<"\n"<<"tax="<<tax<<"\n"<<"WEIGHT="<<weight<<endl;
+			return;
+				}
+			}
+			i++;
+			if(i%max==0)
+					i=0;
+		}
+	} while(i!=addr);
+	if(found==0)
+		cout<<"\nRecord does not exist in hash file\n";
+	return;
+}
+
