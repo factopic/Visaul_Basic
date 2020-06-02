@@ -246,3 +246,39 @@ int Shopping::remove(int addr,char k[])
 }
 
 
+
+void Shopping::displayall(){
+	file.open(fn,ios::in);
+	char dummy[10];
+	cout<<setiosflags(ios::left);
+	cout<<setw(5)<<"KEY"<<setw(25)<<"CATEGORY"<<setw(25)<<"PRODUCT NAME"<<setw(15)<<"BRAND"<<setw(10)<<"PRICE"<<setw(10)<<"TAX"<<setw(10)<<"WEIGHT"<<endl;
+	for(int i=0;i<max;i++){
+		for(int j=0;j<5;j++){
+			file.seekg(i*recsize*5+j*recsize+i*2);
+			file.getline(dummy,5,'\n');
+			if(strcmp(dummy,"    ")!=0){
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(key,5,'|');
+				file.getline(category,30,'|');
+				file.getline(prodName,10,'|');
+				file.getline(brand,16,'|');
+				file.getline(price,10,'|');
+				file.getline(tax,16,'|');
+            file.getline(weight,17,'|');
+				cout<<setiosflags(ios::left);
+				cout<<setw(5)<<key<<setw(25)<<category<<setw(25)<<prodName<<setw(15)<<brand<<setw(10)<<price<<setw(10)<<tax<<setw(10)<<weight<<endl;
+
+			}
+		}
+ }
+}
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
