@@ -177,3 +177,72 @@ void Shopping::retrieve(int addr,char k[])
 	return;
 }
 
+
+
+int Shopping::remove(int addr,char k[])
+{
+	int found=0,i;
+	char dummy[10];
+	i=addr;
+	file.open(fn,ios::in|ios::out);
+	do
+	{
+		file.seekg(i*recsize*5+i*2);
+		file.getline(dummy,5,'\n');
+		//cout<<dummy<<endl;
+		if(strcmp(dummy,"    ")==0)
+			break;
+		file.seekg(i*recsize*5+i*2);
+		file.getline(key,5,'|');
+		//cout<<key<<"   "<<k<<endl;
+		if(strcmp(key,k)==0)
+		{
+			found=1;
+			cout<<"Record found"<<endl;
+			file.getline(category,16,'|');
+			file.getline(prodName,30,'|');
+			file.getline(brand,10,'|');
+			file.getline(price,5,'|');
+			file.getline(tax,5,'|');
+			cout<<setiosflags(ios::left);
+			cout<<"Key="<<key<<"\n"<<"Category="<<category<<"\n"<<"Product Name="<<prodName<<"\n"<<"Brand="<<brand<<"\n"<<"price="<<price<<"\n"<<"tax="<<tax<<endl;
+			file.seekp(i*recsize*5+i*2);
+			for(int i=0;i<recsize;i++)
+				file.put(' ');
+			return(found);
+		}
+		else
+		{
+			for(int j=0;j<5;j++){
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(dummy,5,'\n');
+				if(strcmp(dummy,"    ")==0)
+					return(found);
+				file.seekg(i*recsize*5+j*recsize+i*2);
+				file.getline(key,5,'|');
+				if(strcmp(key,k)==0)
+				{
+					found=1;
+					cout<<"Record found"<<endl;
+					file.getline(category,16,'|');
+					file.getline(prodName,30,'|');
+					file.getline(brand,10,'|');
+					file.getline(price,5,'|');
+					file.getline(tax,5,'|');
+					cout<<setiosflags(ios::left);
+					cout<<"Key="<<key<<"\n"<<"Category="<<category<<"\n"<<"Product Name="<<prodName<<"\n"<<"Brand="<<brand<<"\n"<<"price="<<price<<"\n"<<"tax="<<tax<<endl;
+					file.seekp(i*recsize*5+j*recsize+i*2);
+					for(int i=0;i<recsize;i++)
+						file.put(' ');
+					return(found);
+				}
+			}
+			i++;
+			if(i%max==0)
+				i=0;
+		}
+	} while(i!=addr);
+	return(found);
+}
+
+
