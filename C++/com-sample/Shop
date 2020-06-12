@@ -294,5 +294,30 @@ class Employee
  };
 
 
+void Employee::initialEmp()
+{
+	int i,j;
+	file.open(fn1,ios::in);
+	if(!file)
+	{
+		file.open(fn1,ios::out);
+		if(!file)
+		{
+			cout<<"Unable to open the file";
+			getch();
+			exit(1);
+		}
+		for(i=0;i<max;i++)
+		{
+			file.seekp(i*recsize1*5+i*2,ios::beg);
+			for(j=0;j<(recsize1)*5;j++)
+				file<<" ";
+			file<<endl;
+		}
+		cout<<"Empty file created"<<endl;
+	}
+	file.close();
+	return;
+ }
 
 
